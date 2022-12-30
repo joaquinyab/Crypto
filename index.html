@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="C:\Users\Admin\Desktop\FrontEnd\DOM\styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text:400,500&display=swap" rel="stylesheet">
+
+
+
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="main-card">
+    <div class="main-title">CryptoWeb
+    </div>
+    <div class="slider">
+    </div>
+  </div>
+
+
+
+  <container class = "Charts-container">
+    <cards class = "Charts-cards">
+      <Bitcoin style ="width:30%" class="BTC-chart">
+        <card class="asset-info">
+          <div class="chart-title">
+            <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/btc.svg" width="15%">
+
+            <h1>Bitcoin</h1>
+          </div>
+          <div class="details">
+            <h2 class ="asset-price" id="btc-price"></h2>
+          </div>
+        </card>
+        <canvas id="btc-Chart"></canvas>
+      </Bitcoin>
+            <Ethereum style="width:30%" class="ETH-chart">
+              <card class="asset-info">
+                <div class="chart-title">
+                  <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/eth.svg" width="15%">
+        
+                  <h1>Ethereum</h1>
+                </div>
+                <div class="details">
+                  <h2 class="asset-price" id="eth-price"></h2>
+                </div>
+              </card>
+              <canvas id="eth-Chart"></canvas>
+            </Ethereum>
+                      <BINANCE style="width:30%" class="BNB-chart">
+                        <card class="asset-info">
+                          <div class="chart-title">
+                            <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/bnb.svg" width="15%">
+                      
+                            <h1>Binance</h1>
+                          </div>
+                          <div class="details">
+                            <h2 class="asset-price" id="bnb-price"></h2>
+                          </div>
+                        </card>
+                        <canvas id="bnb-Chart"></canvas>
+                      </BINANCE>
+          </cards>
+        </container>
+    </cards>
+  </container>
+
+
+
+
+</body>
+  <script src="C:\Users\Admin\Desktop\FrontEnd\DOM\index.js"></script>
+</html>
