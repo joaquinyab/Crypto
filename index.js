@@ -2,7 +2,7 @@
 //LLAMANDO INFO btc
 const btcData = async() =>{
   const response = await
-    fetch('https://min-api.cryptocompare.com/data/v2/histominute?fsym=BTC&tsym=USD&limit=119&api_key=ac2effc46c41b2b23f3d66af5699f23690e2552d485f411602ef3474f7a577a9');
+    fetch('https://min-api.cryptocompare.com/data/v2/histominute?fsym=BTC&tsym=USD&limit=119&api_key=');
   const json = await response.json();
   const data = json.Data.Data
   const times = data.map(obj => obj.time)
@@ -14,7 +14,7 @@ const btcData = async() =>{
 }
 const ethData = async () => {
   const response = await
-    fetch('https://min-api.cryptocompare.com/data/v2/histominute?fsym=ETH&tsym=USD&limit=119&api_key=ac2effc46c41b2b23f3d66af5699f23690e2552d485f411602ef3474f7a577a9');
+    fetch('https://min-api.cryptocompare.com/data/v2/histominute?fsym=ETH&tsym=USD&limit=119&api_key=');
   const json = await response.json();
   const data = json.Data.Data
   const times = data.map(obj => obj.time)
@@ -27,7 +27,7 @@ const ethData = async () => {
 
 const bnbData = async () => {
   const response = await
-    fetch('https://min-api.cryptocompare.com/data/v2/histominute?fsym=BNB&tsym=USD&limit=119&api_key=ac2effc46c41b2b23f3d66af5699f23690e2552d485f411602ef3474f7a577a9');
+    fetch('https://min-api.cryptocompare.com/data/v2/histominute?fsym=BNB&tsym=USD&limit=119&api_key=');
   const json = await response.json();
   const data = json.Data.Data
   const times = data.map(obj => obj.time)
