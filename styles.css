@@ -1,8 +1,9 @@
+.responsive-container{
+  display:none;
+}
 body{
-  background-color: #000000;
- 
+  background-color: #303030;
 
- 
 }
 body,
 html {
@@ -16,7 +17,7 @@ html {
     width: 55%;
     
     height: 45%;
-    background-color: #303030;
+    background-color: #141414;
     box-shadow: 0 10px 20px rgba(0, 0, 0, .3);
     overflow: hidden;
     border-radius: 15px;
@@ -30,7 +31,6 @@ html {
     margin-left: 25%;
     /*this is half of width of your div*/
     z-index: 2;
-
 
 }
 
@@ -73,7 +73,7 @@ h1{
 .BNB-chart,
 .BTC-chart,
 .ETH-chart{
-  background-color: #303030;
+  background-color: #141414;
   display: grid;
   max-width: 300px;
   min-width: 250px;
@@ -140,4 +140,157 @@ card h1 {
   grid-area: chart;
   border-radius: 0px 0px 30px 30px;
   margin-top: auto;
+}
+
+.listaPrecios{
+  position: absolute;
+  width: 100%;
+ /* margin-top: 3%;*/
+ /* margin-right: 140%;*/
+  top: 7%;
+  text-decoration: none;
+}
+nav ul {
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+  font-size: 15px;
+  color: aliceblue;
+    text-shadow:
+        0 0 7px rgb(255, 255, 255),
+        0 0 10px rgb(255, 255, 255),
+       /* 0 0 21px rgb(255, 255, 255),*/
+        0 0 42px rgb(0, 195, 255),
+        /*0 0 82px rgb(0, 195, 255),*/
+       /* 0 0 92px rgb(0, 195, 255),*/
+        /*0 0 102px rgb(0, 195, 255),*/
+        0 0 151px rgb(0, 195, 255);
+}
+li{
+  
+    font-family: 'Red Hat Text', sans-serif;
+      color: #000000;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-shadow:
+      0 0 7px rgb(9, 9,9),
+      0 0 10px rgb(9, 9, 9),
+      0 0 42px rgb(131, 142, 146),
+      0 0 151px rgb(131, 142, 146);
+
+}
+
+
+
+
+
+@media only screen and (width<=600px){
+
+  .responsive-container{
+
+
+  }
+
+
+  body{
+    background-color: aqua;
+  }
+  .main-card {
+    display: none;
+
+  
+    }
+  .Charts-cards {
+    width: 20%;
+    font-size: 12px;
+    flex-direction: column-reverse;
+    /*position: fixed;*/
+
+    /*flex-wrap: wrap;*/
+    padding-top: 75px;
+    padding-bottom: 30px;
+    /*display:center;
+    justify-content: center;*/
+
+
+    }
+    .BNB-chart,
+    .BTC-chart,
+    .ETH-chart {
+      background-color: #303030;
+      display: grid;
+      max-width: 200px;
+      min-width: 200px;
+      grid-template-columns: 1fr;
+      grid-template-rows: minmax(50px, 60px) 1fr;
+      grid-template:
+            "info"
+            "chart";
+      border-radius: 30px;
+      margin-top: 30%;
+
+    
+    
+    }
+    
+    .BNB-chart {
+      box-shadow: 10px 10px 20px 1px rgba(255, 255, 255, 0.15);
+      margin-left: auto;
+
+    
+    
+    
+    }
+    
+    .BTC-chart {
+      box-shadow: 10px 10px 20px 1px rgba(247, 147, 26, .15);
+      margin-left: auto;
+    
+      }
+    
+    
+    
+        .ETH-chart {
+          box-shadow: 10px 10px 20px 1px rgba(17, 188, 185, 0.15);
+    
+        margin-left: auto;
+    
+    
+        }
+    
+        .asset-info {
+          grid-area: info;
+          display: inline-flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 5% 0 5%;
+    
+        }
+    
+        .title {
+          display: inline-flex;
+        }
+    
+        card h1 {
+          margin-left: 10px;
+        }
+    
+        #btc-Chart {
+          grid-area: chart;
+          border-radius: 0px 0px 30px 30px;
+          margin-top: auto;
+        }
+    
+        #eth-Chart {
+          grid-area: chart;
+          border-radius: 0px 0px 30px 30px;
+          margin-top: auto;
+        }
+    
+        #bnb-Chart {
+          grid-area: chart;
+          border-radius: 0px 0px 30px 30px;
+          margin-top: auto;
+        }
 }
