@@ -1,5 +1,5 @@
 
-//LLAMANDO INFO btc
+///LLAMANDO INFO btc
 const btcData = async() =>{
   const response = await
     fetch('https://min-api.cryptocompare.com/data/v2/histominute?fsym=BTC&tsym=USD&limit=119&api_key=');
@@ -28,6 +28,70 @@ const ethData = async () => {
 const bnbData = async () => {
   const response = await
     fetch('https://min-api.cryptocompare.com/data/v2/histominute?fsym=BNB&tsym=USD&limit=119&api_key=');
+  const json = await response.json();
+  const data = json.Data.Data
+  const times = data.map(obj => obj.time)
+  const prices = data.map(obj => obj.high)
+  return {
+    times,
+    prices
+  }
+}
+const yfiData = async () => {
+  const response = await
+    fetch('https://min-api.cryptocompare.com/data/v2/histominute?fsym=YFI&tsym=USD&limit=');
+  const json = await response.json();
+  const data = json.Data.Data
+  const times = data.map(obj => obj.time)
+  const prices = data.map(obj => obj.high)
+  return {
+    times,
+    prices
+  }
+}
+
+const paxgData = async () => {
+  const response = await
+    fetch('https://min-api.cryptocompare.com/data/v2/histominute?fsym=PAXG&tsym=USD&limit=119&api_key=');
+  const json = await response.json();
+  const data = json.Data.Data
+  const times = data.map(obj => obj.time)
+  const prices = data.map(obj => obj.high)
+  return {
+    times,
+    prices
+  }
+}
+
+const xmrData = async () => {
+  const response = await
+    fetch('https://min-api.cryptocompare.com/data/v2/histominute?fsym=XMR&tsym=USD&limit=119&api_key=');
+  const json = await response.json();
+  const data = json.Data.Data
+  const times = data.map(obj => obj.time)
+  const prices = data.map(obj => obj.high)
+  return {
+    times,
+    prices
+  }
+}
+
+const bnxData = async () => {
+  const response = await
+    fetch('https://min-api.cryptocompare.com/data/v2/histominute?fsym=BNX&tsym=USD&limit=119&api_key=ac2effc46c41b2b23f3d66af5699f23690e2552d485f411602ef3474f7a577a9');
+  const json = await response.json();
+  const data = json.Data.Data
+  const times = data.map(obj => obj.time)
+  const prices = data.map(obj => obj.high)
+  return {
+    times,
+    prices
+  }
+}
+
+const ltcData = async () => {
+  const response = await
+    fetch('https://min-api.cryptocompare.com/data/v2/histominute?fsym=LTC&tsym=USD&limit=119&api_key=');
   const json = await response.json();
   const data = json.Data.Data
   const times = data.map(obj => obj.time)
@@ -305,20 +369,63 @@ async function updateBitcoinPrice() {
   let currentPrice = prices[prices.length - 1].toFixed(2);
 
   document.getElementById("btc-price").innerHTML = "$" + currentPrice;
+  document.getElementById("cornerbtc-price").innerHTML = "$" + currentPrice;
 }
 async function updateEthereumPrice() {
   let { times, prices } = await ethData()
   let currentPrice = prices[prices.length - 1].toFixed(2);
 
   document.getElementById("eth-price").innerHTML = "$" + currentPrice;
+  document.getElementById("cornereth-price").innerHTML = "$" + currentPrice;
 }
 async function updateBinancePrice() {
   let { times, prices } = await bnbData()
   let currentPrice = prices[prices.length - 1].toFixed(2);
 
-  document.getElementById("bnb-price").innerHTML = "$" + currentPrice;
+  document.getElementById("cornerbnb-price").innerHTML = "$" + currentPrice;
+  document.getElementById("cornerbnb-price").innerHTML = "$" + currentPrice;
+}
+async function updateYearnPrice() {
+  let { times, prices } = await yfiData()
+  let currentPrice = prices[prices.length - 1].toFixed(2);
+
+  document.getElementById("corneryfi-price").innerHTML = "$" + currentPrice;
+}
+async function updatePaxGoldPrice() {
+  let { times, prices } = await paxgData()
+  let currentPrice = prices[prices.length - 1].toFixed(2);
+
+  document.getElementById("cornerpaxg-price").innerHTML = "$" + currentPrice;
 }
 
+async function updateMoneroPrice() {
+  let { times, prices } = await paxgData()
+  let currentPrice = prices[prices.length - 1].toFixed(2);
+
+  document.getElementById("cornerxmr-price").innerHTML = "$" + currentPrice;
+}
+
+async function updateBinaryXPrice() {
+  let { times, prices } = await paxgData()
+  let currentPrice = prices[prices.length - 1].toFixed(2);
+
+  document.getElementById("cornerbnx-price").innerHTML = "$" + currentPrice;
+}
+
+async function updateLiteCoinrice() {
+  let { times, prices } = await ltcData()
+  let currentPrice = prices[prices.length - 1].toFixed(2);
+
+  document.getElementById("cornerltc-price").innerHTML = "$" + currentPrice;
+}
+
+
+
+updateLiteCoinrice()
+updateBinaryXPrice()
+updateMoneroPrice()
+updatePaxGoldPrice()
+updateYearnPrice()
 updateBinancePrice()
 updateBitcoinPrice()
 updateEthereumPrice()
